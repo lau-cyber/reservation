@@ -1,37 +1,103 @@
-# cpt202-a19-reservation
+# 📘 Classroom Reservation System
 
-#### Description
-Currently, in XJTLU campus, we have noticed that only the seminar rooms in library of CB and IBSS have online reservation apps, while the classrooms in other buildings have no such kind of apps to reserve spare classrooms, which means that it is extremely inconvenient for students to find a place for self-study in the campus, and there are often conflicts and chaos of the right to use each spare classroom. Therefore, our group is going to develop a web app to solve this issue.
+A web-based classroom reservation system designed for **XJTLU campus**, addressing the lack of an online platform for booking available classrooms for self-study.  
+Students can search classrooms, join waiting lists, and reserve rooms online, reducing conflicts and improving space utilization.  
+This system is built with **Spring Boot (Java)**, **MVC architecture**, and a **MySQL relational database**.
 
-#### Software Architecture
-Software architecture description
+---
 
-#### Installation
+## 🚀 Features
 
-1.  Run the sql scripts to create tables and insert instances before running the application
-2.  Run the file "ReservationApplication.java" in "src/main/java/com/cpt202a19/reservation"
-3.  Open 'IP-address':8080 in your browser
-4.  Ensure the setting of your database and check appliactionpropertie file
-#### Instructions
+### ✔ User Module
+- User registration & login  
+- Personal information management  
 
-1.  Register your account first
-2.  Log in with your account
-3.  Add reservation details(modify: delete and rebulid would achieve)
-4.  Book room(s) (must select for waiting list and then cids could get in url and could reserve)
+### ✔ Classroom Module
+- View spare classrooms across campus  
+- Search and filter rooms  
+- View room capacity & availability  
 
-#### Contribution
+### ✔ Reservation Workflow
+- Add a room to the waiting list  
+- Reserve classroom using generated **CID**  
+- Modify reservation by deleting & rebuilding the request  
 
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
+### ✔ Admin / Backend Support
+- Database-driven room information  
+- Persistent user & reservation data  
+
+---
+
+## 🧱 System Architecture
+
+The system adopts a **four-layer architecture**:
+
+```
+┌──────────────────────────────┐
+│  Visit Layer (UI Layer)      │ → JSP / HTML views
+├──────────────────────────────┤
+│  Access Layer (Controller)   │ → MVC controllers handle routing
+├──────────────────────────────┤
+│  Service Layer (Business)    │ → Reservation logic, validation
+├──────────────────────────────┤
+│  Data Layer (DAO + MySQL)    │ → Database operations
+└──────────────────────────────┘
+```
 
 
-#### Gitee Feature
+---
 
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+## 🗄 Database Design
+
+Based on the ER diagram & relational schema
+
+### **Main Tables**
+- `t_user` — user accounts  
+- `t_information` — personal details  
+- `t_room` — classroom information  
+- `t_cart` — waiting list entries  
+- `t_order` — confirmed reservations  
+
+All tables follow **3rd Normal Form (3NF)** to avoid data redundancy and ensure consistency.
+
+---
+
+## 📦 Installation & Setup
+
+### **1. Database Setup**
+- Run the SQL scripts in `/sql` to create tables and insert sample data.  
+- Ensure MySQL connection settings in `application.properties` are correct.
+
+### **2. Run the Application**
+Run the main application file:
+
+```src/main/java/com/cpt202a19/reservation/ReservationApplication.java```
+
+### **3. Access in Browser**
+
+```http://<your-ip-address>:8080```
+
+---
+
+## 🕹 User Instructions
+
+1. Register your account  
+2. Log in  
+3. Browse classrooms  
+4. Add a room to your waiting list  
+5. Reserve rooms using the URL containing the generated **CID**  
+6. To modify reservations → delete the original and recreate it  
+
+*(Aligned with Report pp. 3–4 — CPT202 Assignment 2 - 1930115)*
+
+---
+
+## 🤝 Contribution Guidelines
+
+1. Fork this repository  
+2. Create a new branch: `feat_xxx`  
+3. Commit your changes  
+4. Submit a Pull Request  
+
+---
+
