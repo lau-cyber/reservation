@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!-- Browser compatibility -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit" />
+		<title>Xjtluer Classroom Reservation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Import bootstrap3 pacages -->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<!-- Fonts and icons -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+
+		<script type="text/javascript" src="../js/distpicker.data.js"></script>
+		<script type="text/javascript" src="../js/distpicker.js"></script>
+	</head>
+
+	<body>
+		<!-- The header starts from here -->
+		<header class="header">
+			<!--XJTLU logo-->
+			<div class="row">
+				<div class="col-md-3">
+					<a href="index.html">
+						<img src="../images/index/stumalllogo.png" />
+					</a>
+				</div>
+
+				<!-- Quick settings -->
+				<div class="col-md-9 top-item">
+					<ul class="list-inline pull-right">
+						<li><a href="reservation_list.html"><span class="fa fa-list"></span>&nbsp;Reservation List</a></li>
+						<li class="li-split">|</li>
+						<li>
+							<!-- The top navagation bar -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+									<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Setting <span class="caret"></span></span>
+								</button>
+								<ul class="dropdown-menu top-dropdown-ul" role="menu">
+									<li><a href="password.html">Change your password</a></li>
+									<li><a href="userdata.html">Personal profile</a></li>
+									<li><a href="upload.html">Upload portrait</a></li>
+									<li><a href="details.html">Reservation details</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="li-split">|</li>
+						<li><a href="login.html"><span class="fa fa-user"></span>&nbsp;Log Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<!-- Navagation -->
+		<!-- Separate navagation with top part -->
+		<div class="row top-nav">
+			<div class="col-md-6">
+				<ul class="nav nav-pills">
+					<li>
+						<a href="#"></a>
+					</li>
+					<li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<form action="search.html" class="form-inline pull-right" role="form">
+					<div class="form-group">
+						<input type="text" class="form-control" id="search" name="search" placeholder="Please enter into here to search!">
+					</div>
+					<button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+				</form>
+			</div>
+		</div>
+		<!-- The header ends here -->
+		<!-- The navagation ends here -->
+		
+		<div class="container">
+			<div class="col-md-2">
+				<!-- The left navagation column begins from here -->
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+
+							<!--Main options, my reservation orders-->
+							<p class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">My reservations</a>
+							</p>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse">
+							<div class="panel-body">
+								<div><a href="order.html">All reservations</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+
+							<!-- The four main options -->
+							<p class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Change Information</a>
+							</p>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div><a href="password.html">Change Password </a></div>
+								<div><a href="userdata.html">Personal Profile </a></div>
+								<div><a href="upload.html">Upload Portrait </a></div>
+								<div><a href="details.html"><b>Reservation details </b></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- The left navagation column ends here -->
+				
+			</div>
+			<div class="col-md-10">
+				<div class="panel panel-default">
+					<ul class="nav nav-tabs">
+						<li><a href="password.html">Change Password</a></li>
+						<li><a href="userdata.html">Personal Profile</a></li>
+						<li><a href="upload.html">Upload Portrait</a></li>
+						<li class="active"><a href="#">Reservation details</a></li>
+					</ul>
+					<div class="panel-body">
+
+						<!--Add a new reservation information start from here-->
+						<form id="form-add-new-details" class="form-horizontal" role="form">
+							<div class="form-group">
+								<label class="col-md-2 control-label"><span class="txtred">*</span>Username: </label>
+								<div class="col-md-8">
+									<input name="name" type="text" class="form-control" placeholder="Please enter the name of reserver here !">
+								</div>
+							</div>
+							<div class="detail_content" data-toggle="distpicker">
+								<div class="form-group">
+									<label class="col-md-2 control-label"><span class="txtred">*</span>Department: </label>
+									<div class="col-md-3">
+										<select id="department-list" name="departmentName" class="form-control" data-department="---- Select department ----"></select>
+									</div>
+									<label class="col-md-2 control-label"><span class="txtred">*</span>Major: </label>
+									<div class="col-md-3">
+										<select id="major-list" name="majorName" class="form-control" data-major="---- Select major ----"></select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label"><span class="txtred">*</span>Grade: </label>
+									<div class="col-md-3">
+										<select id="grade-list" name="gradeName" class="form-control" data-grade="---- Select grade ----"></select>
+									</div>
+									<label class="col-md-2 control-label">StudentID: </label>
+									<div class="col-md-3">
+										<input name="stId" type="text" class="form-control" placeholder="Enter your ID!">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label"><span class="txtred">*</span>Details: </label>
+								<div class="col-md-8">
+									<textarea name="details" class="form-control" rows="3" placeholder="Please enter some necessary descriptions about all reservers."></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label"><span class="txtred">*</span>Email: </label>
+								<div class="col-md-3">
+									<input name="mail" type="text" class="form-control" placeholder="Enter email!">
+								</div>
+								<label class="col-md-2 control-label">Telephone-number</label>
+								<div class="col-md-3">
+									<input name="tel" type="text" class="form-control" placeholder="Enter Telephone-number!">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Identity</label>
+								<div class="col-md-8">
+									<input name="tag" type="text" class="form-control" placeholder="Are you a student or XJTLU staff ?">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label"><a href="details.html">Back</a>&nbsp;&nbsp;&nbsp;</label>
+								<div class="col-sm-10">
+									<input id="btn-add-new-details" type="button" class="col-md-1 btn btn-primary" value="save" />
+									<input type="reset" class="col-md-offset-1 col-md-1 btn btn-primary" value="reset" />
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--Page footer start from here-->
+		<footer class="footer">
+			<!-- Botton information -->
+			<div class="text-center rights container">
+				<div class="col-md-offset-2 col-md-2">
+					<span class="fa fa-thumbs-o-up"></span>
+					<p>High Quality</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-address-card-o"></span>
+					<p>Personal Customization</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-graduation-cap"></span>
+					<p>Desgined for Xjtluer</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-bitcoin"></span>
+					<p>Well Performed</p>
+				</div>
+			</div>
+		</footer>
+		<!--Page footer ends-->
+
+		<script type="text/javascript">
+			$("#btn-add-new-details").click(function() {
+				$.ajax({
+					url: "/inforamtions/add_new_information",
+					type: "POST",
+					data: $("#form-add-new-details").serialize(),
+					dataType: "JSON",
+					success: function(json) {
+						if (json.state == 200) {
+							alert("Add new reservation details successfully! ");
+							location.href = "details.html";
+						} else {
+							alert("Sorry, failed to add new reservation information! " + json.message);
+						}
+					},
+					error: function(xhr) {
+						alert("Sorry, something went wrong, please try again later!" + xhr.status);
+						//location.href = "login.html";
+					}
+				});
+			});
+		</script>
+
+		<script type="text/javascript">
+			let defaultOption = '<option value="0">----- Select -----</option>';
+
+			$(document).ready(function() {
+				showDepartmentList();
+				$("#major-list").append(defaultOption);
+				$("#grade-list").append(defaultOption);
+			});
+
+			$("#department-list").change(function() {
+				showMajorList();
+			});
+
+			$("#major-list").change(function() {
+				showGradeList();
+			});
+
+			function showDepartmentList() {
+				$("#department-list").append(defaultOption);
+				$.ajax({
+					url: "/dmg",
+					type: "GET",
+					data: "parent=86",
+					dataType: "JSON",
+					success: function(json) {
+						if (json.state == 200) {
+							let list = json.data;
+							console.log("count=" + list.length);
+							for (let i = 0; i < list.length; i++) {
+								console.log(list[i].name);
+								let option = '<option value="' + list[i].code + '">' + list[i].name + '</option>';
+								$("#department-list").append(option);
+							}
+						}
+					}
+				});
+			}
+
+			function showMajorList() {
+				let parent = $("#department-list").val();
+				$("#major-list").empty();
+				$("#grade-list").empty();
+
+				$("#major-list").append(defaultOption);
+				$("#grade-list").append(defaultOption);
+
+				if (parent == 0) {
+					return;
+				}
+
+				$.ajax({
+					url: "/dmg",
+					type: "GET",
+					data: "parent=" + parent,
+					dataType: "JSON",
+					success: function(json) {
+						if (json.state == 200) {
+							let list = json.data;
+							console.log("count=" + list.length);
+							for (let i = 0; i < list.length; i++) {
+								console.log(list[i].name);
+								let option = '<option value="' + list[i].code + '">' + list[i].name + '</option>';
+								$("#major-list").append(option);
+							}
+						}
+					}
+				});
+			}
+
+			function showGradeList() {
+				let parent = $("#major-list").val();
+				$("#grade-list").empty();
+				$("#grade-list").append(defaultOption);
+
+				if (parent == 0) {
+					return;
+				}
+
+				$.ajax({
+					url: "/dmg",
+					type: "GET",
+					data: "parent=" + parent,
+					dataType: "JSON",
+					success: function(json) {
+						if (json.state == 200) {
+							let list = json.data;
+							console.log("count=" + list.length);
+							for (let i = 0; i < list.length; i++) {
+								console.log(list[i].name);
+								let option = '<option value="' + list[i].code + '">' + list[i].name + '</option>';
+								$("#department-list").append(option);
+							}
+
+						}
+					}
+				});
+			}
+		</script>
+
+	</body>
+</html>

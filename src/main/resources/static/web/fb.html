@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!-- Browser compatibility -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit" />
+		<title>Xjtluer Classroom Reservation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Import bootstrap3 pacages -->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<!-- Fonts and icons -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/building.css" />
+	</head>
+
+	<body>
+		<!-- The header starts from here -->
+		<header class="header">
+			<!--XJTLU logo-->
+			<div class="row">
+				<div class="col-md-3">
+					<a href="index.html">
+						<img src="../images/index/stumalllogo.png" />
+					</a>
+				</div>
+				<!-- Quick settings -->
+				<div class="col-md-9 top-item">
+					<ul class="list-inline pull-right">
+						<li><a href="reservation_list.html"><span class="fa fa-list"></span>&nbsp;Reservation List</a></li>
+						<li class="li-split">|</li>
+						<li>
+							<!-- The top navagation bar -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+									<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Setting <span class="caret"></span></span>
+								</button>
+								<ul class="dropdown-menu top-dropdown-ul" role="menu">
+									<li><a href="password.html">Change your password</a></li>
+									<li><a href="userdata.html">Personal profile</a></li>
+									<li><a href="upload.html">Upload portrait</a></li>
+									<li><a href="details.html">Reservation details</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="li-split">|</li>
+						<li><a href="login.html"><span class="fa fa-user"></span>&nbsp;Log Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<!-- Navagation -->
+		<!-- Separate navagation with top part -->
+		<div class="row top-nav">
+			<div class="col-md-6">
+				<ul class="nav nav-pills">
+					<li>
+						<a href="#"></a>
+					</li>
+					<li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<form action="search.html" class="form-inline pull-right" role="form">
+					<div class="form-group">
+						<input type="text" class="form-control" id="search" name="search" placeholder="Please enter into here to search!">
+					</div>
+					<button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+				</form>
+			</div>
+		</div>
+		<!-- The header ends here -->
+		<!-- The navagation ends here -->
+
+		<div class="container">
+			<div class="col-md-3">
+				<!-- The left navagation column begins from here -->
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<!-- The building list-->
+							<p class="panel-title">
+								<a>Building list</a>
+							</p>
+						</div>
+						<div class="panel-body">
+							<div><a href="fb.html"><b>Foundation Buliding</b></a></div>
+							<div><a>Central Building</a></div>
+							<div><a>Science Building A</a></div>
+							<div><a>Science Building B</a></div>
+							<div><a>Science Building C</a></div>
+							<div><a>Science Building D</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<!-- The room list-->
+							<p class="panel-title"><a>Room list</a></p>
+						</div>
+						<div class="panel-body">
+							<div><a href="fb103.html">FB103</a></div>
+							<div><a href="fb111.html">FB111</a></div>
+							<div><a href="fb303.html">FB303</a></div>
+							<div><a href="fb345.html">FB345</a></div>
+							<div><a href="fb603.html">FB603</a></div>
+						</div>
+					</div>
+				</div>	
+				<!-- The left navagation column ends here -->
+				
+			</div>
+			<div class="col-md-9">
+				<h3 id="product-title" class="col-md-12 title-row-1"><b>Foundation Building</b></h3>
+				<div class="col-md-6">
+					<div class="img-big col-md-12">
+						<img src="../images/index/fb.jpg" class="img-responsive" />
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<p class="panel-title">Popular Room</p>
+						</div>
+						<div id="hot-list" class="panel-body panel-item">
+							<div class="col-md-7 text-row-2"><a href="product.html">FB111</a></div>
+							<div class="col-md-2">1F</div>
+							<div class="col-md-3"><img src="../images/portal/02FB111/2.jpg" class="img-responsive" /></div>
+						</div>
+					</div>	
+				</div>
+				<div class="col-md-9">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="panel-title"><b>Room List</b></h3>
+						</div>
+						<table class="table">
+					        <th>Room Number</th><th>Type</th><th>Floor</th><th>Picture</th>
+					        <tr>
+					        	<td><a href="fb103.html"><img src="../images/portal/05FB103/1.png" class="img-responsive"/></a></td>
+					        	<td>Classroom</td>
+					        	<td>1F</td>
+					        	<td><img src="../images/portal/05FB103/2.jpg" class="img-responsive"/></td>
+					        </tr>
+					        <tr>
+					        	<td><a href="fb111.html"><img src="../images/portal/02FB111/1.jpg" class="img-responsive"/></a></td>
+					        	<td>Ladder-classroom</td>
+					        	<td>1F</td>
+					        	<td><img src="../images/portal/02FB111/2.jpg" class="img-responsive"/></td>
+					        </tr>
+					        <tr>
+					        	<td><a href="fb303.html"><img src="../images/portal/03FB303/1.png" class="img-responsive"/></a></td>
+					        	<td>Lab-room</td>
+					        	<td>3F</td>
+					        	<td><img src="../images/portal/03FB303/2.jpg" class="img-responsive"/></td>
+					        </tr>
+					        <tr>
+					        	<td><a href="fb345.html"><img src="../images/portal/00FB345/1.jpg" class="img-responsive"/></a></td>
+					        	<td>Classroom</td>
+					        	<td>3F</td>
+					        	<td><img src="../images/portal/00FB345/2.jpg" class="img-responsive"/></td>
+					        </tr>
+					        <tr>
+					        	<td><a href="fb603.html"><img src="../images/portal/04FB603/1.png" class="img-responsive"/></a></td>
+					        	<td>Meeting-room</td>
+					        	<td>6F</td>
+					        	<td><img src="../images/portal/04FB603/2.jpg" class="img-responsive"/></td>
+					        </tr>
+					    </table>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--Page footer start from here-->
+		<footer class="footer">
+			<!-- Botton information -->
+			<div class="text-center rights container">
+				<div class="col-md-offset-2 col-md-2">
+					<span class="fa fa-thumbs-o-up"></span>
+					<p>High Quality</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-address-card-o"></span>
+					<p>Personal Customization</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-graduation-cap"></span>
+					<p>Desgined for Xjtluer</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-bitcoin"></span>
+					<p>Well Performed</p>
+				</div>
+			</div>
+		</footer>
+		<!--Page footer ends-->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				showHotList();
+			});
+
+			function showHotList() {
+				$("#hot-list").empty();
+				$.ajax({
+					url: "/rooms/hot_list",
+					type: "GET",
+					dataType: "JSON",
+					success: function(json) {
+						let list = json.data;
+						console.log("count=" + list.length);
+						for (let i = 0; i < list.length; i++) {
+							console.log(list[i].title);
+							let html = '<div class="col-md-12">'
+									+ '<div class="col-md-7 text-row-2"><a href="product.html?id=#{id}">#{title}</a></div>'
+									+ '<div class="col-md-2">¥#{point}</div>'
+									+ '<div class="col-md-3"><img src="..#{image}collect.png" class="img-responsive" /></div>'
+									+ '</div>';
+
+							html = html.replace(/#{id}/g, list[i].id);
+							html = html.replace(/#{title}/g, list[i].title);
+							html = html.replace(/#{point}/g, list[i].point);
+							html = html.replace(/#{image}/g, list[i].image);
+
+							$("#hot-list").append(html);
+						}
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cpt202a19.reservation.mapper.InformationMapper">
+    <resultMap id="InformationEntityMap" type="com.cpt202a19.reservation.entity.Information">
+        <id column="rid" property="rid"/>
+        <result column="department_name" property="departmentName"/>
+        <result column="department_code" property="departmentCode"/>
+        <result column="major_name" property="majorName"/>
+        <result column="major_code" property="majorCode"/>
+        <result column="grade_name" property="gradeName"/>
+        <result column="grade_code" property="gradeCode"/>
+        <result column="is_default" property="isDefault"/>
+        <result column="created_user" property="createdUser"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="modified_user" property="modifiedUser"/>
+        <result column="modified_time" property="modifiedTime"/>
+    </resultMap>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="rid">
+        INSERT INTO t_information (
+            uid, name, department_name, department_code, major_name, major_code, grade_name, grade_code,
+                                   stId, details, mail, tel,tag, is_default, created_user, created_time, modified_user, modified_time
+        ) VALUES (
+                     #{uid}, #{name}, #{departmentName}, #{departmentCode}, #{majorName}, #{majorCode}, #{gradeName},
+                     #{gradeCode}, #{stId}, #{details}, #{mail}, #{tel}, #{tag}, #{isDefault}, #{createdUser},
+                     #{createdTime}, #{modifiedUser}, #{modifiedTime}
+                 )
+    </insert>
+
+      <!-- Count the number of users created：Integer countByUid(Integer uid) -->
+    <select id="countByUid" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM t_information WHERE uid=#{uid}
+    </select>
+
+     <!-- Query a user's data：List<Information> findByUid(Integer uid) -->
+    <select id="findByUid" resultMap="InformationEntityMap">
+        SELECT * FROM t_information WHERE uid=#{uid} ORDER BY is_default DESC, created_time DESC
+    </select>
+
+    <!-- Set all create of a user to non-default：Integer updateNonDefaultByUid(Integer uid) -->
+    <update id="updateNonDefaultByUid">
+        UPDATE t_information SET is_default=0 WHERE uid=#{uid}
+    </update>
+
+    <!-- Set specified as default： Integer updateDefaultByAid @Param("rid") Integer rid, @Param("modifiedUser") String modifiedUser,@Param("modifiedTime") Date modifiedTime) -->
+    <update id="updateDefaultByRid">
+        UPDATE t_information SET is_default=1, modified_user=#{modifiedUser}, modified_time=#{modifiedTime} WHERE rid=#{rid}
+    </update>
+
+    <!-- According to the rid, query the details：Information findByAid(Integer rid) -->
+    <select id="findByRid" resultMap="InformationEntityMap">
+        SELECT * FROM t_information WHERE rid=#{rid}
+    </select>
+
+    <!-- delete data according to rid：Integer deleteByRid(Integer rid) -->
+    <delete id="deleteByRid">
+        DELETE FROM t_information WHERE rid=#{rid}
+    </delete>
+
+    <!-- Query the last modification of a user：Information findLastModified(Integer uid) -->
+    <select id="findLastModified" resultMap="InformationEntityMap">
+        SELECT * FROM t_information WHERE uid=#{uid} ORDER BY modified_time DESC LIMIT 0,1
+    </select>
+
+</mapper>    

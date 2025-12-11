@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!-- Browser Edge compatibility -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit" />
+		<title>Xjtluer Classroom Reservation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Import bootstrap3 packages -->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<!-- Fonts and icons -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/orderConfirm.css" />
+		<!-- Java Script file to implement the responses -->
+		<script src="../js/orderConfirm.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!-- The header part -->
+		<header class="header">
+			<!-- The XJTLU logo-->
+			<div class="row">
+				<div class="col-md-3">
+					<a href="index.html">
+						<img src="../images/index/stumalllogo.png" />
+					</a>
+				</div>
+
+				<!-- Quick settings -->
+				<div class="col-md-9 top-item">
+					<ul class="list-inline pull-right">
+						<li><a href="reservation_list.html"><span class="fa fa-list"></span>&nbsp;Reservation List</a></li>
+						<li class="li-split">|</li>
+						<li>
+
+							<!-- The top navagation bar -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+									<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Setting <span class="caret"></span></span>
+								</button>
+								<ul class="dropdown-menu top-dropdown-ul" role="menu">
+									<li><a href="password.html">Change your password</a></li>
+									<li><a href="userdata.html">Personal profile</a></li>
+									<li><a href="upload.html">Upload portrait</a></li>
+									<li><a href="details.html">Reservation details</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="li-split">|</li>
+						<li><a href="login.html"><span class="fa fa-user"></span>&nbsp;Log Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<!-- Navagation -->
+		<!-- Separate navagation with top part -->
+		<div class="row top-nav">
+			<div class="col-md-6">
+				<ul class="nav nav-pills">
+					<li>
+						<a href="#"></a>
+					</li>
+					<li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<form action="search.html" class="form-inline pull-right" role="form">
+					<div class="form-group">
+						<input type="text" class="form-control" id="search" name="search" placeholder="Please enter into here to search!">
+					</div>
+					<button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+				</form>
+			</div>
+		</div>
+		<!-- The header ends here -->
+		<!-- The navagation ends here -->
+
+		<div class="container">
+			<div class="col-md-offset-1 col-md-10">
+				<div class="col-md-4">
+					<div class="col-md-12 order-bar-undo">
+						1. Confirm Reservation Information
+						<span class="pull-right"><span class="fa fa-chevron-right"></span></span>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="col-md-12 order-bar-undo">
+						2. Submit Reservation Request
+						<span class="pull-right"><span class="fa fa-chevron-right"></span></span>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="col-md-12 order-bar-active">
+						3. Reserved Successfully
+					</div>
+				</div>
+				<div class="col-md-12">
+					<form role="form">
+						<div class="form-group">
+							<label for="name">
+								<p>Reservation Result:</p>
+							</label>
+							<hr/>
+							<div class="text-center pay-res">
+								<span class="fa fa-check-square-o pay-res-icon"></span>Reserved Successfully
+							</div>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Page footer start from here-->
+		<footer class="footer">
+			<!-- Botton information -->
+			<div class="text-center rights container">
+				<div class="col-md-offset-2 col-md-2">
+					<span class="fa fa-thumbs-o-up"></span>
+					<p>High Quality</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-address-card-o"></span>
+					<p>Personal Customization</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-graduation-cap"></span>
+					<p>Desgined for Xjtluer</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-bitcoin"></span>
+					<p>Well Performed</p>
+				</div>
+			</div>
+		</footer>
+		<!--Page footer ends-->
+	</body>
+
+</html>

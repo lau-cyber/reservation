@@ -1,0 +1,29 @@
+ /** icon increase color */
+ .rights .fa {
+ 	font-size: 30px;
+ 	color: #667799;
+ }
+ /** Small spacing between pictures */
+ img {
+ 	margin: 1px;
+ }
+ /** hyperlink style */
+ .callus a {
+ 	font-size: 12px;
+ 	text-decoration: none;
+ 	color: #666666;
+ }
+ /** high bottom padding */
+ .bottom {
+ 	margin: 10px;
+ }
+ /** Color and fill of the entire row of equity */
+ .rights {
+ 	width: 100%;
+ 	padding: 50px;
+ 	background-color: #F2F2F2;
+ }
+ /** Contact us that whole line of padding */
+ .beforeBottom {
+ 	padding-top: 30px;
+ }

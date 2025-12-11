@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!-- Browser Edge compatibility -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit" />
+		<title>Xjtluer Classroom Reservation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Import bootstrap3 packages -->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<!-- Fonts and icons -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/cart.css" />
+		<!-- Java Script file to implement the responses -->
+		<script src="../js/reservation_list.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!-- The header part -->
+		<header class="header">
+			<!-- The XJTLU logo-->
+			<div class="row">
+				<div class="col-md-3">
+					<a href="index.html">
+						<img src="../images/index/stumalllogo.png" />
+					</a>
+				</div>
+
+				<!-- Quick settings -->
+				<div class="col-md-9 top-item">
+					<ul class="list-inline pull-right">
+						<li><a href="reservation_list.html"><span class="fa fa-list"></span>&nbsp;Reservation List</a></li>
+						<li class="li-split">|</li>
+						<li>
+							<!-- The top navagation bar -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+									<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Setting <span class="caret"></span></span>
+								</button>
+								<ul class="dropdown-menu top-dropdown-ul" role="menu">
+									<li><a href="password.html">Change your password</a></li>
+									<li><a href="userdata.html">Personal profile</a></li>
+									<li><a href="upload.html">Upload portrait</a></li>
+									<li><a href="details.html">Reservation details</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="li-split">|</li>
+						<li><a href="login.html"><span class="fa fa-user"></span>&nbsp;Log Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<!-- Navagation -->
+		<!-- Separate navagation with top part -->
+		<div class="row top-nav">
+			<div class="col-md-6">
+				<ul class="nav nav-pills">
+					<li>
+						<a href="#"></a>
+					</li>
+					<li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<form action="search.html" class="form-inline pull-right" role="form">
+					<div class="form-group">
+						<input type="text" class="form-control" id="search" name="search" placeholder="Please enter into here to search!">
+					</div>
+					<button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+				</form>
+			</div>
+		</div>
+		<!-- The header ends here -->
+		<!-- The navagation ends here -->
+
+		<div class="container">
+			<div class="col-md-offset-1 col-md-10">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<p class="panel-title"><span class="fa fa-shopping-cart"></span> Your Waiting List:</p>
+					</div>
+					<div class="panel-body">
+						<form action="orderConfirm.html" role="form" >
+
+							<!-- The waiting list form start from here -->
+							<!-- The real function of waiting list is just like wroking as a shopping cart,
+							so try to use shopping cart mind to build the reservation list-->
+							<table class="cart-table" width="100%">
+								<thead>
+									<tr>
+										<th width="11%">
+											<input type="checkbox" class="ckall" onclick="checkall(this)" />Select all</th>
+										<th width="110"></th>
+										<th width="29%">Classroom</th>
+										<th width="11%">Time</th>
+										<th width="15%">Count</th>
+										<th width="11%">Total</th>
+										<th>Operations</th>
+									</tr>
+								</thead>
+								<tbody id="cart-list" class="cart-body">
+									<!---->
+								</tbody>
+							</table>
+							<div class="total-bar">
+								<a href="javascript:selDelCart()" class="cart-del-sel btn btn-default btn-xs">Delete the chosen one</a>
+								<span class="pull-right">Have selected
+								<span id="selectCount">0</span> classroom(s) Total booking
+								<span id="selectTotal">0</span> Hours
+								</span>
+							</div>
+							<div>
+								<span class="pull-right">
+								<input type="submit" value="Reserve" class="btn btn-primary btn-lg link-account" />
+							</span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Page footer start from here-->
+		<footer class="footer">
+			<!-- Botton information -->
+			<div class="text-center rights container">
+				<div class="col-md-offset-2 col-md-2">
+					<span class="fa fa-thumbs-o-up"></span>
+					<p>High Quality</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-address-card-o"></span>
+					<p>Personal Customization</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-graduation-cap"></span>
+					<p>Desgined for Xjtluer</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-bitcoin"></span>
+					<p>Well Performed</p>
+				</div>
+			</div>
+		</footer>
+		<!--Page footer ends-->
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				showReservationList();
+			});
+
+			/* Display the records in your reservation list*/ 
+			function showReservationList() {
+				$("#cart-list").empty();
+				$.ajax({
+					url: "/carts",
+					type: "GET",
+					dataType: "JSON",
+					success: function(json) {
+						let list = json.data;
+						for (let i = 0; i < list.length; i++) {
+							let tr = '<tr>'
+										+ '<td>'
+										+ 	'<input name="cids" value="#{cid}" type="checkbox" class="ckitem" />'
+										+ '</td>'
+										+ '<td><img src="..#{image}2.jpg" class="img-responsive" /></td>'
+										+ '<td>#{title}</td>'
+										+ '<td><span id="time-#{cid}">#{time}</span></td>'
+										+ '<td>'
+										+ 	'<input type="button" value="-" class="num-btn" onclick="reduceNum(#{cid})" />'
+										+ 	'<input id="num-#{cid}" type="text" size="2" readonly="readonly" class="num-text" value="#{num}">'
+										+ 	'<input class="num-btn" type="button" value="+" onclick="addNum(#{cid})" />'
+										+ '</td>'
+										+ '<td><span id="total-tiem-#{cid}">#{totaltime}</span></td>'
+										+ '<td>'
+										+ 	'<input type="button" onclick="deleteByCid(#{cid})" class="cart-del btn btn-default btn-xs" value="Delete" />'
+										+ '</td>'
+									 + '</tr>';
+							tr = tr.replace(/#{cid}/g, list[i].cid);
+							tr = tr.replace(/#{title}/g, list[i].title);
+							tr = tr.replace(/#{image}/g, list[i].image);
+							tr = tr.replace(/#{time}/g, list[i].rotime);
+							tr = tr.replace(/#{num}/g, list[i].num);
+							tr = tr.replace(/#{totaltime}/g, list[i].rotime * list[i].num);
+							$("#cart-list").append(tr);
+						}
+					}
+				});
+			}
+
+			function addNum(cid) {
+				alert(cid)
+				$.ajax({
+					url: "/carts/" + cid + "/num/add",
+					type: "POST",
+					dataType: "JSON",
+					success: function(json) {
+						if (json.state == 200) {
+							 showReservationList();
+							$("#num-" + cid).val(json.data);
+							let time = $("#time-" + cid).html();
+							let totaltime = time * json.data;
+							$("#total-time-" + cid).html(totaltime);
+						} else {
+							alert("Sorry, failed to add booking hours, please try again later!" + json.message);
+						}
+					},
+					error: function(xhr) {
+						alert("Sorry, there is somthing wrong, please try again later!" + xhr.status);
+						//location.href = "login.html";
+					}
+				});
+			}
+			function reduceNum(cid) {
+				$.ajax({
+					url: "/carts/" + cid + "/num/reduce",
+					type: "POST",
+					dataType: "JSON",
+					success: function(json) {
+						if (json.state == 200) {
+							showReservationList();
+							$("#num-" + cid).val(json.data);
+							let time = $("#time-" + cid).html();
+							let totaltime = time * json.data;
+							$("#total-time-" + cid).html(totaltime);
+						} else {
+							alert("Sorry, failed to reduce booking hours, please try again later!" + json.message);
+						}
+					},
+					error: function(xhr) {
+						alert("Sorry, there is somthing wrong, please try again later!" + xhr.status);
+						//location.href = "login.html";
+					}
+				});
+			}
+
+			function deleteByCid(cid) {
+			$.ajax({
+				url: "/carts/" + cid + "/delete",
+				type: "POST",
+				dataType: "JSON",
+				success: function(json) {
+					if (json.state == 200) {
+						showReservationList();
+					} else {
+						alert("Sorry, failed to delete" + json.message);
+					}
+				},
+				error: function(json) {
+					alert("Sorry, there is somthing wrong, please try again later!" + json.status);
+					//location.href = "login.html";
+				}
+			});
+		}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cpt202a19.reservation.mapper.DmgMapper">
+    <!-- Get DMG：List<District> findByParent(String parent) -->
+    <select id="findByParent" resultType="com.cpt202a19.reservation.entity.Dmg">
+        SELECT * FROM t_dmg WHERE parent=#{parent} ORDER BY code ASC
+    </select>
+    <!-- Get the name of the DMG area based on the DMG code：String findNameByCode(String code) -->
+    <select id="findNameByCode" resultType="java.lang.String">
+        SELECT name FROM t_dmg WHERE code=#{code}
+    </select>
+    <select id="findCodeByName" resultType="java.lang.String">
+        SELECT code FROM t_dmg WHERE name=#{name}
+    </select>
+</mapper>

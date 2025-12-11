@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!--Edge browser H5 compatible settings-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--360 browser H5 compatible settings-->
+		<meta name="renderer" content="webkit" />
+		<title>Xjtluer Classroom Reservation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--import core file-->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.8.3.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<script src="../js/menu.js" type="text/javascript" charset="utf-8"></script>
+		<!-- font icon -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/webindex.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+	</head>
+
+	<body>
+		<!--head-->
+		<header class="header">
+			<!--XJTLU Logo-->
+			<div class="row">
+				<div class="col-md-3">
+					<a href="index.html">
+						<img src="../images/index/stumalllogo.png" />
+					</a>
+				</div>
+				<!--Quick Options-->
+				<div class="col-md-9 top-item">
+					<ul class="list-inline pull-right">
+						<li><a href="reservation_list.html"><span class="fa fa-list"></span>&nbsp;Reservation List</a></li>
+						<li class="li-split">|</li>
+						<li>
+							<!--Drop-down button : Management-->
+							<div class="btn-group">
+								<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+									<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Setting <span class="caret"></span></span>
+								</button>
+								<ul class="dropdown-menu top-dropdown-ul" role="menu">
+									<li><a href="password.html">Change your password</a></li>
+									<li><a href="userdata.html">Personal profile</a></li>
+									<li><a href="upload.html">Upload portrait</a></li>
+									<li><a href="details.html">Reservation details</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="li-split">|</li>
+						<li><a href="login.html"><span class="fa fa-user"></span>&nbsp;Log Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<!--navigation -->
+		<!--Split Navigation and Top-->
+		<div class="row top-nav">
+			<div class="col-md-6">
+				<ul class="nav nav-pills">
+					<li>
+						<a href="#"></a>
+					</li>
+					<li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<form action="search.html" class="form-inline pull-right" role="form">
+					<div class="form-group">
+						<input type="text" class="form-control" id="search" name="search" placeholder="Please enter into here to search!">
+					</div>
+					<button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+				</form>
+			</div>
+		</div>
+		<!--head end-->
+		<!--end of navigation-->
+
+		<!--A map with jump hyperlinks-->
+		<div class="col-md-offset-1">
+			<h4>Please click the building in the campus map.</h4>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md">
+					<div class="carousel-inner" align="center">
+						<div class="item active">
+							<img src="../images/index/map.jpg" width="1000" height="886" alt="Campus Map" usemap="#campusMap">
+							<map name="campusMap">
+								<area shape="rect" coords="353,353,480,398" alt="Foundation Building" href="fb.html">
+								<area shape="rect" coords="402,485,446,529" alt="Central Building" href="cb.html">
+								<area shape="rect" coords="505,460,563,478" alt="Science Building A" href="sa.html">
+								<area shape="rect" coords="505,497,563,515" alt="Science Building B" href="sb.html">
+								<area shape="rect" coords="505,533,563,551" alt="Science Building C" href="sc.html">
+								<area shape="rect" coords="505,569,563,587" alt="Science Building D" href="sd.html">
+								<area shape="rect" coords="585,462,636,478" alt="Public Building" href="pb.html">
+								<area shape="rect" coords="642,462,685,478" alt="Mathematics Building A" href="ma.html">
+								<area shape="rect" coords="644,494,708,510" alt="Mathematics Building B" href="sd.html">
+								<area shape="rect" coords="585,567,640,584" alt="Electronic Engineering Building" href="ee.html">
+								<area shape="rect" coords="653,529,721,583" alt="Engineering Building" href="eb.html">
+								<area shape="rect" coords="484,700,522,785" alt="Business School Building" href="bs.html">
+							</map>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+
+
+		<!--footer starts-->
+		<footer class="footer">
+			<!-- Botton information -->
+			<div class="text-center rights container">
+				<div class="col-md-offset-2 col-md-2">
+					<span class="fa fa-thumbs-o-up"></span>
+					<p>High Quality</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-address-card-o"></span>
+					<p>Personal Customization</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-graduation-cap"></span>
+					<p>Desgined for Xjtluer</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-bitcoin"></span>
+					<p>Well Performed</p>
+				</div>
+			</div>
+		</footer>
+		<!--end of footer-->
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				showHotList();
+			});
+
+			function showHotList() {
+				$("#hot-list").empty();
+				$.ajax({
+					url: "/products/hot_list",
+					type: "GET",
+					dataType: "JSON",
+					success: function(json) {
+						let list = json.data;
+						console.log("count=" + list.length);
+						for (let i = 0; i < list.length; i++) {
+							console.log(list[i].title);
+							let html = '<div class="col-md-12">'
+									+ '<div class="col-md-7 text-row-2"><a href="product.html?id=#{id}">#{title}</a></div>'
+									+ '<div class="col-md-2">¥#{price}</div>'
+									+ '<div class="col-md-3"><img src="..#{image}collect.png" class="img-responsive" /></div>'
+									+ '</div>';
+
+							html = html.replace(/#{id}/g, list[i].id);
+							html = html.replace(/#{title}/g, list[i].title);
+							html = html.replace(/#{price}/g, list[i].price);
+							html = html.replace(/#{image}/g, list[i].image);
+
+							$("#hot-list").append(html);
+						}
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>

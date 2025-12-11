@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!-- Browser compatibility -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit" />
+		<title>Xjtluer Classroom Reservation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Import bootstrap3 pacages -->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<!-- Fonts and icons -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/building.css" />
+		<script src="../js/room.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!-- The header starts from here -->
+		<header class="header">
+			<!--XJTLU logo-->
+			<div class="row">
+				<div class="col-md-3">
+					<a href="index.html">
+						<img src="../images/index/stumalllogo.png" />
+					</a>
+				</div>
+				<!-- Quick settings -->
+				<div class="col-md-9 top-item">
+					<ul class="list-inline pull-right">
+						<li><a href="reservation_list.html"><span class="fa fa-list"></span>&nbsp;Reservation List</a></li>
+						<li class="li-split">|</li>
+						<li>
+							<!-- The top navagation bar -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+									<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Setting <span class="caret"></span></span>
+								</button>
+								<ul class="dropdown-menu top-dropdown-ul" role="menu">
+									<li><a href="password.html">Change your password</a></li>
+									<li><a href="userdata.html">Personal profile</a></li>
+									<li><a href="upload.html">Upload portrait</a></li>
+									<li><a href="details.html">Reservation details</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="li-split">|</li>
+						<li><a href="login.html"><span class="fa fa-user"></span>&nbsp;Log Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<!-- Navagation -->
+		<!-- Separate navagation with top part -->
+		<div class="row top-nav">
+			<div class="col-md-6">
+				<ul class="nav nav-pills">
+					<li>
+						<a href="#"></a>
+					</li>
+					<li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<form action="search.html" class="form-inline pull-right" role="form">
+					<div class="form-group">
+						<input type="text" class="form-control" id="search" name="search" placeholder="Please enter into here to search!">
+					</div>
+					<button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+				</form>
+			</div>
+		</div>
+		<!-- The header ends here -->
+		<!-- The navagation ends here -->
+
+		<div class="container">
+			<div class="col-md-3">
+				<!-- The left navagation column begins from here -->
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<!-- The building list-->
+							<p class="panel-title"><a>Building list</a></p>
+						</div>
+						<div class="panel-body">
+							<div><a href="fb.html"><b>Foundation Buliding</b></a></div>
+							<div><a>Central Building</a></div>
+							<div><a>Science Building A</a></div>
+							<div><a>Science Building B</a></div>
+							<div><a>Science Building C</a></div>
+							<div><a>Science Building D</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<!-- The room list-->
+							<p class="panel-title"><a>Room list</a></p>
+						</div>
+						<div class="panel-body">
+							<div><a href="fb103.html">FB103</a></div>
+							<div><a href="fb111.html">FB111</a></div>
+							<div><a href="fb303.html"><b>FB303</b></a></div>
+							<div><a href="fb345.html">FB345</a></div>
+							<div><a href="fb603.html">FB603</a></div>
+						</div>
+					</div>
+				</div>	
+				<!-- The left navagation column ends here -->
+				
+			</div>
+			<div class="col-md-9">
+				<div class="col-md-5">
+					<h3 id="t_room-title" class="col-md-12 title-row-1"><b>FB303</b></h3>
+					<div class="col-md-12 info-bar">
+						<div><span class="fa fa-flag"></span>&nbsp;&nbsp;&nbsp;Type: <span id="t_room-item_type">Lab-room</span></div>
+						<div><span class="fa fa-cubes"></span>&nbsp;&nbsp;Capacity: 100</div>
+						<small>Notice：<span id="t_room-point">Remember to check the timetable and the notice of the campus before enter in!</span></small>
+					</div>
+					<form class="form-inline room-form col-md-12" role="form">
+						<div class="col-md-12 form-space">
+							<span id="t_room-rotime"><b>Minimum reservation time:</b> 1.5 hour</span>
+						</div>
+						<div class="col-md-12 form-space">
+							<label for="num">Count：</label>
+							<input id="numDown" type="button" value="-" class="num-btn" />
+							<input id="num" type="text" size="2" readonly="readonly" class="num-text" value="1">
+							<input id="numUp" class="num-btn" type="button" value="+" />
+						</div>
+						<div class="col-md-12 form-space">
+							<button id="btn-add-to-list" type="button" class="btn btn-default go-cart"><span class="fa fa-list"></span>&nbsp;Add to reservation list</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-6">
+					<div class="img-big col-md-12">
+						<img src="../images/portal/03FB303/2.jpg" class="img-responsive" />
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		</div>
+		<!--Page footer start from here-->
+		<footer class="footer">
+			<!-- Botton information -->
+			<div class="text-center rights container">
+				<div class="col-md-offset-2 col-md-2">
+					<span class="fa fa-thumbs-o-up"></span>
+					<p>High Quality</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-address-card-o"></span>
+					<p>Personal Customization</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-graduation-cap"></span>
+					<p>Desgined for Xjtluer</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-bitcoin"></span>
+					<p>Well Performed</p>
+				</div>
+			</div>
+		</footer>
+		<!--Page footer ends-->
+
+		<script type="text/javascript" src="../js/jquery-getUrlParam.js"></script>
+		<script type="text/javascript">
+			let id = 10000003;
+			$("#btn-add-to-list").click(function(){
+				$.ajax({
+					url: "/carts/add_to_cart",
+					type: "POST",
+					data: {
+						"roid": id,
+						"amount":$("#num").val()
+					},
+					dataType: "JSON",
+					success: function(json) {
+						if (json.state == 200) {
+							alert("Reservation Successfully！");
+
+						} else {
+							alert("Reservation failed！");
+						}
+					},
+					error: function(xhr) {
+						alert("Sorry, something went wrong, please try again later!" + xhr.message);
+					}
+				});
+			});
+
+		</script>
+		
+	</body>
+
+</html>

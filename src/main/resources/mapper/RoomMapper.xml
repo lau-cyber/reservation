@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cpt202a19.reservation.mapper.RoomMapper">
+    <resultMap id="RoomEntityMap" type="com.cpt202a19.reservation.entity.Room">
+        <id column="id" property="id"/>
+        <result column="category_id" property="categoryId"/>
+        <result column="item_type" property="itemType"/>
+        <result column="point" property="point"/>
+        <result column="created_user" property="createdUser"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="modified_user" property="modifiedUser"/>
+        <result column="modified_time" property="modifiedTime"/>
+    </resultMap>
+
+    <select id="findById" resultMap="RoomEntityMap">
+        SELECT * FROM t_room WHERE id=#{id}
+    </select>
+</mapper>    

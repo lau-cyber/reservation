@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!-- Browser compatibility -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit" />
+		<title>Xjtluer Classroom Reservation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Import bootstrap3 pacages -->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<!-- Fonts and icons -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+		<script src="../js/adddel.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!-- The header part -->
+		<header class="header">
+			<!-- The XJTLU logo-->
+			<div class="row">
+				<div class="col-md-3">
+					<a href="index.html">
+						<img src="../images/index/stumalllogo.png" />
+					</a>
+				</div>
+
+				<!-- Quick settings -->
+				<div class="col-md-9 top-item">
+					<ul class="list-inline pull-right">
+						<li><a href="reservation_list.html"><span class="fa fa-list"></span>&nbsp;Reservation List</a></li>
+						<li class="li-split">|</li>
+						<li>
+							<!-- The top navagation bar -->
+							<div class="btn-group">
+								<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+									<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;Setting <span class="caret"></span></span>
+								</button>
+								<ul class="dropdown-menu top-dropdown-ul" role="menu">
+									<li><a href="password.html">Change your password</a></li>
+									<li><a href="userdata.html">Personal profile</a></li>
+									<li><a href="upload.html">Upload portrait</a></li>
+									<li><a href="details.html">Reservation details</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="li-split">|</li>
+						<li><a href="login.html"><span class="fa fa-user"></span>&nbsp;Log Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<!-- Navagation -->
+		<!-- Separate navagation with top part -->
+		<div class="row top-nav">
+			<div class="col-md-6">
+				<ul class="nav nav-pills">
+					<li>
+						<a href="#"></a>
+					</li>
+					<li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<form action="search.html" class="form-inline pull-right" role="form">
+					<div class="form-group">
+						<input type="text" class="form-control" id="search" name="search" placeholder="Please enter into here to search!">
+					</div>
+					<button type="submit" class="btn btn-default btn-sm"><span class="fa fa-search"></span></button>
+				</form>
+			</div>
+		</div>
+		<!-- The header ends here -->
+		<!-- The navagation ends here -->
+
+		<div class="container">
+			<div class="col-md-2">
+				<!-- The left navagation column begains -->
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+
+							<!-- Main options, all my reservation list -->
+							<p class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">My reservations</a>
+							</p>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse">
+							<div class="panel-body">
+								<div><a href="order.html">All reservations</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							
+							<!-- Four main options/settings -->
+							<p class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Change Information</a>
+							</p>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div><a href="password.html">Change Password </a></div>
+								<div><a href="userdata.html">Personal Profile </a></div>
+								<div><a href="upload.html">Upload Portrait </a></div>
+								<div><a href="details.html"><b>Reservation details </b></a></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- The left navagation column ends here -->
+
+			</div>
+			<div class="col-md-10">
+				<div class="panel panel-default">
+					<ul class="nav nav-tabs">
+						<li><a href="password.html">Change Password</a></li>
+						<li><a href="userdata.html">Personal Profile</a></li>
+						<li><a href="upload.html">Upload Portrait</a></li>
+						<li class="active"><a href="#">Reservation details</a></li>
+					</ul>
+					<div class="panel-body">
+						
+						<!--User reservation information filling form-->
+						<table class="table table-striped">
+							<caption>Reservation Information</caption>
+							<thead>
+								<tr>
+									<th>Identity (student/staff)</th>
+									<th>Username</th>
+									<th>Details</th>
+									<th>PhoneNumber</th>
+									<th colspan="3">Opeartions</th>
+								</tr>
+							</thead>
+							<tbody id="department-list">
+							</tbody>
+						</table>
+						<a href="addDetails.html" class="btn btn-sm btn-primary"><span class="fa fa-plus"></span> Add a new reservation</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Page footer start from here-->
+		<footer class="footer">
+			<!-- Botton information -->
+			<div class="text-center rights container">
+				<div class="col-md-offset-2 col-md-2">
+					<span class="fa fa-thumbs-o-up"></span>
+					<p>High Quality</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-address-card-o"></span>
+					<p>Personal Customization</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-graduation-cap"></span>
+					<p>Desgined for Xjtluer</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-bitcoin"></span>
+					<p>Well Performed</p>
+				</div>
+			</div>
+		</footer>
+		<!--Page footer ends-->
+	</body>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			showDetailList();
+		});
+
+		function showDetailList() {
+			$("#department-list").empty();
+			$.ajax({
+				url: "/inforamtions",
+				type: "GET",
+				dataType: "JSON",
+				success: function (json) {
+					let list = json.data;
+					for (let i = 0; i < list.length; i++) {
+						console.log(list[i].name);
+						let detail = '<tr>'
+								+ '<td>#{tag}</td>'
+								+ '<td>#{name}</td>'
+								+ '<td>#{department}#{major}#{grade}#{details}</td>'
+								+ '<td>#{tel}</td>'
+								+ '<td><a class="btn btn-xs btn-info"><span class="fa fa-edit"></span> Modify</a></td>'
+								+ '<td><a onclick="deleteByRid(#{rid})" class="btn btn-xs add-del btn-info"><span class="fa fa-trash-o"></span> Delete</a></td>'
+								+ '<td><a onclick="setDefault(#{rid})" class="btn btn-xs add-def btn-default">Set Default</a></td>'
+								+ '</tr>';
+
+						detail = detail.replace(/#{rid}/g, list[i].rid);
+						detail = detail.replace(/#{tag}/g, list[i].tag);
+						detail = detail.replace("#{name}", list[i].name);
+						detail = detail.replace("#{department}", list[i].departmentName);
+						detail = detail.replace("#{major}", list[i].majorName);
+						detail = detail.replace("#{grade}", list[i].gradeName);
+						detail = detail.replace("#{details}", list[i].details);
+						detail = detail.replace("#{tel}", list[i].tel);
+
+
+						$("#department-list").append(detail);
+					}
+					$(".add-def:eq(0)").hide();
+				}
+			});
+		}
+
+		function setDefault(rid) {
+			$.ajax({
+				url: "/inforamtions/" + rid + "/set_default",
+				type: "POST",
+				dataType: "JSON",
+				success: function(json) {
+					if (json.state == 200) {
+						showDetailList();
+					} else {
+						alert("Sorry, failed to add a new reservatin information, please try agian later! " + json.message);
+					}
+				},
+				error: function(xhr) {
+					alert("Sorry, something went wrong, please try again later! " + xhr.status);
+					//location.href = "login.html";
+				}
+			});
+		}
+		function deleteByRid(rid) {
+			$.ajax({
+				url: "/inforamtions/" + rid + "/delete",
+				type: "POST",
+				dataType: "JSON",
+				success: function(json) {
+					if (json.state == 200) {
+						showDetailList();
+					} else {
+						alert("Sorry, failed to delete reservation information, please try agian later! " + json.message);
+					}
+				},
+				error: function(json) {
+					alert("Sorry, something went wrong, please try again later! " + json.status);
+					//location.href = "login.html";
+				}
+			});
+		}
+	</script>
+</html>

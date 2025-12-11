@@ -1,0 +1,37 @@
+/** Header padding */
+.header {
+	padding: 20px 60px;
+}
+/** Top options overall */
+.top-item a {
+	color: #777777;
+	line-height: 40px;
+}
+/** li width of top option */
+.top-item li {
+	width: 200px;
+	text-align: center;
+}
+/** top option vertical bar | width of */
+.top-item .li-split {
+	width: 10px;
+}
+/** Search text box width */
+#search {
+	width: 300px;
+}
+/** top navigation bar */
+.top-nav {
+	background-color: #F2F2F2;
+	height: 50px;
+	padding-top: 6px;
+	margin-bottom: 20px;
+}
+/** Manage dropdown box styles */
+#top-dropdown-btn {
+	color: #777777;
+}
+/** Manage drop-down box li */
+.top-dropdown-ul li {
+	width: 100%;
+}

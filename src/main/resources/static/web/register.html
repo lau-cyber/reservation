@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!--Edge browser H5 compatible settings-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--360 browser H5 compatible settings-->
+		<meta name="renderer" content="webkit" />
+		<title>Xjtluer Classroom Reservation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--import core file-->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<!-- font icon -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/reg.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+	</head>
+
+	<body>
+		<!--head-->
+		<header class="header">
+			<img src="../images/index/stumalllogo.png" alt="" />
+			<span class="pull-right"><b>Hi! </b><b>Welcome to Xjtluer Classroom Reservation System!</b></span>
+		</header>
+
+		<!--The body of the registration box-->
+		<div class="container mycontent text-left">
+			<!--Transparent layer for registration box-->
+			<div class="regDiv">
+				<p>New user? Please get Registered here!</p>
+				<!--form start-->
+				<form id="form-reg" class="form-horizontal" role="form">
+					<!--please enter user name-->
+					<div class="form-group">
+						<label class="col-md-3 control-label">Nickname: </label>
+						<div class="col-md-8">
+							<input name="username" type="text" class="form-control" placeholder="Please enter your Nickname here">
+						</div>
+					</div>
+					<!--Please enter password-->
+					<div class="form-group">
+						<label class="col-md-3 control-label"> Password: </label>
+						<div class="col-md-8">
+							<input name="password" type="text" class="form-control" placeholder="Please enter your Password here">
+						</div>
+					</div>
+					<!--Please confirm your password-->
+					<div class="form-group">
+						<label class="col-md-3 control-label"> Confirmation: </label>
+						<div class="col-md-8">
+							<input type="text" class="form-control" placeholder="Please reenter your Password">
+						</div>
+					</div>
+					<!--OK sign up button-->
+					<div class="form-group">
+						<label class="col-md-3 control-label"></label>
+						<div class="col-md-8">
+							<input id="btn-reg" class="btn btn-primary" type="button" value="Register" />
+							<span class="pull-right"><small>Already have an account?</small><a href="login.html">Please login there!</a></span>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!--footer starts-->
+		<footer class="footer">
+			<!-- Botton information -->
+			<div class="text-center rights container">
+				<div class="col-md-offset-2 col-md-2">
+					<span class="fa fa-thumbs-o-up"></span>
+					<p>High Quality</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-address-card-o"></span>
+					<p>Personal Customization</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-graduation-cap"></span>
+					<p>Desgined for Xjtluer</p>
+				</div>
+				<div class="col-md-2">
+					<span class="fa fa-bitcoin"></span>
+					<p>Well Performed</p>
+				</div>
+			</div>
+		</footer>
+		<!--end of footer-->
+
+		<script type="text/javascript">
+			// Listen to whether the button is clicked, and execute a method if it is clicked
+			$("#btn-reg").click(function() {
+				console.log($("#form-reg").serialize());
+				$.ajax({
+					url: "/users/reg",
+					type: "POST",
+					data: $("#form-reg").serialize(),
+					dataType: "json",
+					success: function(json) {
+						if (json.state == 200) {
+							alert("Successfully registered!");
+							location.href = "login.html";
+						} else {
+							alert("Registration failed!" + json.message);
+						}
+					},error:function (xhr){
+						alert("Sorry, something went wrong, please try again later!" + xhr.status)
+					}
+				});
+			});
+		</script>
+
+	</body>
+	
+</html>
